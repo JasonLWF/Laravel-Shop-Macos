@@ -14,12 +14,10 @@
 Route::get('/', 'PagesController@root')->name('root');
 Auth::routes();
 Route::group(['middleware' => 'auth'], function() {
+	Route::get('/email_verificaion/send', 'EmailVerificationController@send')->name('email_verification.send');
 	Route::get('/email_verify_notice', 'PagesController@emailVerifyNotice')->name('email_verify_notice');
-	// 开始
+	Route::get('/email_verificaion/verify', 'EmailVerificationController@verify')->name('email_verification.verify');
 	Route::group(['middleware' => 'email_verified'], function(){
-		Route::get('/test', function() {
-			return 'Your email is verifyed';
-		});
+		
 	});
-	// 结束
 });
