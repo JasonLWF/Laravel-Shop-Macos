@@ -9,8 +9,6 @@
     <title>@yield('title', 'Laravel Shop') - Laravel 电商</title>
     <!-- 样式 -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <script src="{{ mix('js/app.js') }}"></script>
-    @yield('scriptsAfterJs')
 </head>
 <body>
     <div id="app" class="{{ route_class() }}-page">
@@ -22,5 +20,6 @@
     </div>
     <!-- JS 脚本 -->
     <script src="{{ mix('js/app.js') }}"></script>
+    @yield('scriptsAfterJs')
 </body>
 </html>
