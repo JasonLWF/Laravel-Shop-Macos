@@ -81,6 +81,7 @@
 </div>
 </div>
 </div>
+@endsection
 @section('scriptsAfterJs')
 <script>
   $(document).ready(function() {

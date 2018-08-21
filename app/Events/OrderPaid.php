@@ -29,7 +29,7 @@ class OrderPaid
 
     public function getOrder()
     {
-        retrun $this->order;
+        return $this->order;
     }
 
     /**
