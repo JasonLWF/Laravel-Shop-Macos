@@ -26,16 +26,4 @@ class EventServiceProvider extends ServiceProvider
             SendOrderPaidMail::class,
         ],
     ];
-
-    /**
-     * Register any events for your application.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        parent::boot();
-
-        //
-    }
 }

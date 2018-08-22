@@ -46,21 +46,8 @@ class OrderPaidNotification extends Notification
         return (new MailMessage)
                     ->subject('订单支付成功')
                     ->greeting($this->order->user->name.'您好：')
-                    ->line('您于 '.$this->order->created_at->format('m-d H:i').'创建的订单已经支付成功。');
+                    ->line('您于 '.$this->order->created_at->format('m-d H:i').'创建的订单已经支付成功。')
                     ->action('查看订单', route('orders.show', [$this->order->id]))// 邮件中的按钮及对应链接
                     ->success();
-    }
-
-    /**
-     * Get the array representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return array
-     */
-    public function toArray($notifiable)
-    {
-        return [
-            //
-        ];
     }
 }
