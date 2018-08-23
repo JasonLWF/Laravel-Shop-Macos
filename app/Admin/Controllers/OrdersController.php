@@ -32,20 +32,14 @@ class OrdersController extends Controller
      * @param $id
      * @return Content
      */
-    public function show($id)
+    public function show(Order $order)
     {
-        return Admin::content(function (Content $content) use ($id) {
+        return Admin::content(function (Content $content) use ($order) {
 
-            $content->header('Detail');
-            $content->description('description');
+            $content->header('查看订单');
+            //$content->description('description');
 
-            $content->body(Admin::show(Order::findOrFail($id), function (Show $show) {
-
-                $show->id();
-
-                $show->created_at();
-                $show->updated_at();
-            }));
+            $content->body(view('admin.orders.show', ['order' => $order]));
         });
     }
 
